@@ -1,0 +1,14 @@
+<div class="row mb-5">
+  <div class="col">
+    <input #term type="text" (keyup)="shareArtist(term.value)" class="form-control" placeholder="Share artist...">
+  </div>
+</div>
+
+<app-card
+  *ngIf="!loading"
+  [items]="artists"
+></app-card>
+
+<app-loading
+  *ngIf="loading"
+></app-loading>

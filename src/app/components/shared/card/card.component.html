@@ -1,0 +1,18 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 animated fadeIn">
+  <div class="col puntero" (click)="seeArtist(item)" *ngFor="let item of items">
+    <div class="card h-100">
+      <img [src]="item?.images | imagePipe" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{item?.name}}</h5>
+        <p class="card-text" *ngIf="showArtists">
+          <span *ngFor="let artist of item?.artists" class="badge rounded-pill bg-primary">
+            {{artist?.name}}
+          </span>
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{item.release_date | date}}</small>
+      </div>
+    </div>
+  </div>
+</div>
